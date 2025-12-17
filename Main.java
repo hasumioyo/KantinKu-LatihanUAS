@@ -11,7 +11,6 @@ public class Main {
         Produk p5 = new Produk("P005", "Nasi Gila", 15000);
         Produk p6 = new Produk("P006", "Ayam Geprek", 12000);
 
-        // Keranjang
         Keranjang keranjang = new Keranjang();
 
         int options;
@@ -24,7 +23,7 @@ public class Main {
             System.out.println("5. Nasi Gila - 15000");
             System.out.println("6. Ayam Geprek - 12000");
             System.out.println("7. Lihat Keranjang");
-            System.out.println("0. Selesai");
+            System.out.println("0. Kembali");
             System.out.print("Pilih opsi: ");
 
             options = scanner.nextInt();
@@ -55,9 +54,27 @@ public class Main {
             }
             else if (options == 7) {
                 keranjang.displayKeranjang();
+
+                int subMenu;
+                do {
+                    System.out.println("\n1. Tambah Menu Lagi");
+                    System.out.println("2. Bayar");
+                    System.out.println("0. Kembali");
+                    System.out.print("Pilih: ");
+                    subMenu = scanner.nextInt();
+
+                    if (subMenu == 1) {
+                        break; 
+                    }
+                    else if (subMenu == 2) {
+                        Pembayaran pembayaran = new Pembayaran(keranjang);
+                        pembayaran.bayar();
+                        return; 
+                    }
+                } while (subMenu != 0);
             }
             else if (options == 0) {
-                System.out.println("Terima kasih sudah berbelanja 😊");
+                break;
             }
             else {
                 System.out.println("Opsi tidak valid!");
