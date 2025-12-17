@@ -1,18 +1,24 @@
 public class Customer {
-    private Produk produk;
-    private String alamatPengantaran;
-    private String nomorPesanan;
     private String nama;
     private String email;
+    private String password;
 
-    public Customer(Produk produk, String alamatPengantaran, String nomorPesanan, String email, String nama) {
-        this.produk = produk;
-        this.alamatPengantaran = alamatPengantaran;
-        this.nomorPesanan = nomorPesanan;
+    public Customer(String email, String nama, String password) {
         this.nama = nama;
         this.email = email;
+        this.password = password;
+    }
+
+    public String getNama(String nama) {
+        return nama;
     }
 
 
+    public void displayCustomer() {
+        System.out.println("Customer Info");
+        System.out.println("Nama        : " + nama);
+        System.out.println("Email       : " + email);
+
+    }
     
 }
