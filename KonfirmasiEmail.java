@@ -10,7 +10,6 @@ public class KonfirmasiEmail {
         System.out.println("Halo " + customer.getNama() + ",");
         System.out.println("Terima kasih sudah memesan di KantinKu.");
         System.out.println();
-        System.out.println("Detail Pesanan:");
         pesanan.displayPesanan();
         System.out.println();
         System.out.println("Pesanan Anda telah dikonfirmasi.");
