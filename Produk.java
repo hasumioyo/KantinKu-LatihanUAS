@@ -16,4 +16,9 @@ public class Produk {
     public String getNamaProduk() {
         return namaProduk;
     }
+
+    public void displayProduk() {
+        System.out.println("Nama    : " + getNamaProduk());
+        System.out.println("Harga   : " + getHarga());
+    }
 }

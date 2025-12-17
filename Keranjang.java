@@ -1,27 +1,31 @@
+import java.util.ArrayList;
+
 public class Keranjang {
-    private double totalHarga;
-    private Produk produk;
+    private ArrayList<Produk> daftarProduk;
+    private double totalHarga = 0;
     
-    public Keranjang(double totalHarga, Produk produk) {
-        this.totalHarga = 0;
-        this.produk = produk;
-    }
-
-    public Produk getProduk() {
-        return produk;
-    }
-
-    public void setProduk(Produk produk) {
-        this.produk = produk;
+    public Keranjang() {
+        daftarProduk = new ArrayList<>();
     }
 
     public void tambahProduk(Produk produk) {
-        this.produk = produk;
-        this.totalHarga += produk.getHarga();
+        daftarProduk.add(produk);
+        totalHarga += produk.getHarga();
     }
 
     public double getTotalHarga() {
         return totalHarga;
     }
 
+    public void displayKeranjang() {
+        System.out.println("===== Keranjang Anda =====");
+        System.out.println("List Produk:");
+
+        for (Produk p : daftarProduk) {
+            p.displayProduk();
+            System.out.println("-------------------");
+        }
+
+        System.out.println("Total Harga : " + totalHarga);
+    }
 }
