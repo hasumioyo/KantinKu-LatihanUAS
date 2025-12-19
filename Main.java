@@ -107,8 +107,7 @@ public class Main {
                                     scanner.nextLine(); 
                                     String alamat = scanner.nextLine();
 
-                                    Pesanan pesanan = new Pesanan(
-                                        "ORD" + System.currentTimeMillis(),
+                                    Pesanan pesanan = new Pesanan(  
                                         customer,
                                         keranjang,
                                         pembayaran,

@@ -1,19 +1,21 @@
 public class Pesanan {
-    private String noPesanan;
+    private int noPesanan;
     private Customer customer;
     private Keranjang keranjang;
     private Pembayaran pembayaran;
     private String alamat;
 
-    public Pesanan(String noPesanan, Customer customer, Keranjang keranjang, Pembayaran pembayaran, String alamat) {
-        this.noPesanan = noPesanan;
+    private static int penghitung = 1; 
+
+    public Pesanan(Customer customer, Keranjang keranjang, Pembayaran pembayaran, String alamat) {
+        this.noPesanan = penghitung++;
         this.customer = customer;
         this.keranjang = keranjang;
         this.pembayaran = pembayaran;
         this.alamat = alamat;
     }
 
-    public String getNoPesanan() {
+    public int getNoPesanan() {
         return noPesanan;
     }
 
